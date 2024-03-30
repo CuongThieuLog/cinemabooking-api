@@ -1,257 +1,353 @@
-<html lang='en'>
+<html>
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Email Template</title>
+    <meta charset='utf-8' />
+    <meta http-equiv='x-ua-compatible' content='ie=edge' />
+    <title>Email Confirmation</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
     <style type='text/css'>
-      /* Reset CSS */ body, table, td, a { -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%; margin: 0; padding: 0; border: 0;
-      border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-      img { border: none; line-height: 100%; outline: none; text-decoration:
-      none; -ms-interpolation-mode: bicubic; max-width: 100%; height: auto;
-      float: none !important; } /* End Reset CSS */ /* Email Body */ body {
-      background-color: #f9f9f9; font-family: 'Helvetica Neue', Helvetica,
-      Arial, sans-serif; color: #4f545c; } /* End Email Body */ /* Wrapper */
-      .wrapper { max-width: 640px; margin: 0 auto; box-shadow: 0px 1px 5px
-      rgba(0, 0, 0, 0.1); border-radius: 4px; overflow: hidden; } /* Banner */
-      .banner { background: #007dfb
-      url(https://static.vecteezy.com/system/resources/previews/021/646/199/non_2x/abstract-blue-liquid-wave-banner-template-free-vector.jpg)
-      top center / cover no-repeat; } /* Content Section */ .content-section {
-      background: #ffffff; padding: 40px 70px; } /* Footer Section */
-      .footer-section { background: transparent; padding: 20px 0px; } /* Footer
-      Text */ .footer-text { font-size: 10px; color: #99aab5; text-align:
-      center; }
+      /** * Google webfonts. Recommended to include the .woff version for
+      cross-client compatibility. */ @media screen { @font-face { font-family:
+      'Source Sans Pro'; font-style: normal; font-weight: 400; src:
+      local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+      url(https://fonts.gstatic.com/s/sourcesanspro/v10/ODelI1aHBYDBqgeIAH2zlBM0YzuT7MdOe03otPbuUS0.woff)
+      format('woff'); } @font-face { font-family: 'Source Sans Pro'; font-style:
+      normal; font-weight: 700; src: local('Source Sans Pro Bold'),
+      local('SourceSansPro-Bold'),
+      url(https://fonts.gstatic.com/s/sourcesanspro/v10/toadOcfmlt9b38dHJxOBGFkQc6VGVFSmCnC_l7QZG60.woff)
+      format('woff'); } } /** * Avoid browser level font resizing. * 1. Windows
+      Mobile * 2. iOS / OSX */ body, table, td, a { -ms-text-size-adjust: 100%;
+      /* 1 */ -webkit-text-size-adjust: 100%; /* 2 */ } /** * Remove extra space
+      added to tables and cells in Outlook. */ table, td { mso-table-rspace:
+      0pt; mso-table-lspace: 0pt; } /** * Better fluid images in Internet
+      Explorer. */ img { -ms-interpolation-mode: bicubic; } /** * Remove blue
+      links for iOS devices. */ a[x-apple-data-detectors] { font-family: inherit
+      !important; font-size: inherit !important; font-weight: inherit
+      !important; line-height: inherit !important; color: inherit !important;
+      text-decoration: none !important; } /** * Fix centering issues in Android
+      4.4. */ div[style*='margin: 16px 0;'] { margin: 0 !important; } body {
+      width: 100% !important; height: 100% !important; padding: 0 !important;
+      margin: 0 !important; } /** * Collapse table borders to avoid space
+      between cells. */ table { border-collapse: collapse !important; } a {
+      color: #1a82e2; } img { height: auto; line-height: 100%; text-decoration:
+      none; border: 0; outline: none; }
     </style>
   </head>
+  <body style='background-color: #e9ecef'>
+    <!-- start preheader -->
+    <div
+      class='preheader'
+      style='
+        display: none;
+        max-width: 0;
+        max-height: 0;
+        overflow: hidden;
+        font-size: 1px;
+        line-height: 1px;
+        color: #fff;
+        opacity: 0;
+      '
+    >
+      A preheader is the short summary text that follows the subject line when
+      an email is viewed in the inbox.
+    </div>
+    <!-- end preheader -->
 
-  <body>
-    <div class='wrapper'>
-      <div class='banner'>
-        <table
-          role='presentation'
-          cellpadding='0'
-          cellspacing='0'
-          width='100%'
-          border='0'
-        >
-          <tr>
-            <td
-              style='
-                text-align: center;
-                vertical-align: top;
-                direction: ltr;
-                font-size: 0px;
-                padding: 57px;
-              '
-            >
-              <div
-                style='
-                  cursor: auto;
-                  color: white;
-                  font-family:
-                    Whitney,
-                    Helvetica Neue,
-                    Helvetica,
-                    Arial,
-                    Lucida Grande,
-                    sans-serif;
-                  font-size: 36px;
-                  font-weight: 600;
-                  line-height: 36px;
-                  text-align: center;
-                '
-              >
-                Chào mừng đến với Eve-ly!
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class='content-section'>
-        <div
-          aria-labelledby='mj-column-per-100'
-          class='mj-column-per-100 outlook-group-fix'
-          style='
-            vertical-align: top;
-            display: inline-block;
-            direction: ltr;
-            font-size: 13px;
-            text-align: left;
-            width: 100%;
-          '
-        >
+    <!-- start body -->
+    <table border='0' cellpadding='0' cellspacing='0' width='100%'>
+      <!-- start logo -->
+      <tr>
+        <td align='center' bgcolor='#e9ecef'>
+          <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+        <tr>
+        <td align="center" valign="top" width="600">
+        <![endif]-->
           <table
-            role='presentation'
+            border='0'
             cellpadding='0'
             cellspacing='0'
             width='100%'
-            border='0'
+            style='max-width: 600px'
           >
             <tr>
-              <td>
-                <div
-                  style='
-                    cursor: auto;
-                    color: #737f8d;
-                    font-size: 16px;
-                    line-height: 24px;
-                    text-align: left;
-                  '
+              <td align='center' valign='top' style='padding: 36px 24px'>
+                <a
+                  href='https://www.blogdesire.com'
+                  target='_blank'
+                  style='display: inline-block'
                 >
-                  <p>
-                    <img
-                      src='https://cdn.discordapp.com/email_assets/127c95bbea39cd4bc1ad87d1500ae27d.png'
-                      alt='Party Wumpus'
-                      title='None'
-                      width='500'
-                      style='height: auto'
-                    />
-                  </p>
-                  <h2 style='font-weight: 500; font-size: 20px'>
-                    Xin chào
-                    <b>{{name}}</b>,
-                  </h2>
-                  <p>
-                    Cảm ơn bạn đã đăng ký tài khoản với Eve-ly! Bạn là người
-                    tuyệt vời nhất trên trái đất (và tôi đã gặp rất nhiều người
-                    thực sự tuyệt vời).
-                  </p>
-                  <p style='margin-bottom: 0'>
-                    Trước khi bắt đầu, chúng tôi cần xác minh email của bạn. Mã
-                    của bạn ở dưới đây:
-                  </p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td style='padding: 10px 25px' align='center'>
-                <table
-                  role='presentation'
-                  cellpadding='0'
-                  cellspacing='0'
-                  style='border-collapse: separate'
-                  align='center'
-                  border='0'
-                >
-                  <tr>
-                    <td
-                      bgcolor='#007dfb'
-                      style='
-                        border-radius: 3px;
-                        color: white;
-                        padding: 15px 19px;
-                      '
-                      align='center'
-                    >
-                      <p
-                        style='
-                          background: #007dfb;
-                          color: white;
-                          font-size: 20px;
-                          margin: 0px;
-                        '
-                      >
-                        {{token}}
-                      </p>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td style='padding: 0px 25px 20px'>
-                <div
-                  style='
-                    cursor: auto;
-                    color: #737f8d;
-                    font-size: 16px;
-                    line-height: 24px;
-                    text-align: left;
-                  '
-                >
-                  <p>
-                    Đây là mã OTP sẽ hết hạn sau 5 phút. Vui lòng không chia sẻ
-                    mã OTP này cho người khác. Nếu bạn không đưa ra yêu cầu, xin
-                    vui lòng bỏ qua email này.
-                  </p>
-                  <p style='margin-top: 20px'>Eve-ly Team</p>
-                </div>
+                  <img
+                    src='https://www.blogdesire.com/wp-content/uploads/2019/07/blogdesire-1.png'
+                    alt='Logo'
+                    border='0'
+                    width='48'
+                    style='
+                      display: block;
+                      width: 48px;
+                      max-width: 48px;
+                      min-width: 48px;
+                    '
+                  />
+                </a>
               </td>
             </tr>
           </table>
-        </div>
-      </div>
-      <div class='footer-section'>
-        <table
-          role='presentation'
-          cellpadding='0'
-          cellspacing='0'
-          width='100%'
-          border='0'
-        >
-          <tr>
-            <td
-              style='
-                text-align: center;
-                vertical-align: top;
-                direction: ltr;
-                font-size: 0px;
-              '
-            >
-              <div
-                aria-labelledby='mj-column-per-100'
-                class='mj-column-per-100 outlook-group-fix'
-                style='
-                  vertical-align: top;
-                  display: inline-block;
-                  direction: ltr;
-                  font-size: 13px;
-                  text-align: left;
-                  width: 100%;
-                '
+          <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+        </td>
+      </tr>
+      <!-- end logo -->
+
+      <!-- start hero -->
+      <tr>
+        <td align='center' bgcolor='#e9ecef'>
+          <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+        <tr>
+        <td align="center" valign="top" width="600">
+        <![endif]-->
+          <table
+            border='0'
+            cellpadding='0'
+            cellspacing='0'
+            width='100%'
+            style='max-width: 600px'
+          >
+            <tr>
+              <td
+                align='left'
+                bgcolor='#ffffff'
+                style="
+                  padding: 36px 24px 0;
+                  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+                  border-top: 3px solid #d4dadf;
+                "
               >
-                <table
-                  role='presentation'
-                  cellpadding='0'
-                  cellspacing='0'
-                  width='100%'
-                  border='0'
+                <h1
+                  style='
+                    margin: 0;
+                    font-size: 32px;
+                    font-weight: 700;
+                    letter-spacing: -1px;
+                    line-height: 48px;
+                  '
                 >
+                  Mã xác nhận địa chỉ email của bạn
+                </h1>
+              </td>
+            </tr>
+          </table>
+          <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+        </td>
+      </tr>
+      <!-- end hero -->
+
+      <!-- start copy block -->
+      <tr>
+        <td align='center' bgcolor='#e9ecef'>
+          <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+        <tr>
+        <td align="center" valign="top" width="600">
+        <![endif]-->
+          <table
+            border='0'
+            cellpadding='0'
+            cellspacing='0'
+            width='100%'
+            style='max-width: 600px'
+          >
+            <!-- start copy -->
+            <tr>
+              <td
+                align='left'
+                bgcolor='#ffffff'
+                style="
+                  padding: 24px;
+                  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 24px;
+                "
+              >
+                <p style='margin: 0'>
+                  Để hoàn tất quá trình xác thực địa chỉ email và đảm bảo an
+                  toàn cho tài khoản của bạn, vui lòng nhập mã xác nhận đã được
+                  gửi đến email của bạn vào ô bên dưới.
+                </p>
+              </td>
+            </tr>
+            <!-- end copy -->
+
+            <!-- start button -->
+            <tr>
+              <td align='left' bgcolor='#ffffff'>
+                <table border='0' cellpadding='0' cellspacing='0' width='100%'>
                   <tr>
-                    <td style='word-break: break-word; font-size: 0px'>
-                      <div style='font-size: 1px; line-height: 12px'>
-                        &nbsp;
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      style='
-                        word-break: break-word;
-                        font-size: 0px;
-                        padding: 0px;
-                      '
-                      align='center'
-                    >
-                      <div class='footer-text'>
-                        Gửi bởi Eve-ly Team •
-                        <a
-                          href='https://www.facebook.com/cuong.thieu.1004'
-                          style='color: #1eb0f4; text-decoration: none'
-                          target='_blank'
-                        >@facebook</a>
-                      </div>
-                      <div class='footer-text'>
-                        104 Yên Lãng, Trung Liệt, Đống Đa, Hà Nội
-                      </div>
+                    <td align='center' bgcolor='#ffffff' style='padding: 12px'>
+                      <table border='0' cellpadding='0' cellspacing='0'>
+                        <tr>
+                          <td
+                            align='center'
+                            bgcolor='#1a82e2'
+                            style='border-radius: 6px'
+                          >
+                            <a
+                              href='https://www.blogdesire.com'
+                              target='_blank'
+                              style="
+                                display: inline-block;
+                                padding: 16px 36px;
+                                font-family: 'Source Sans Pro', Helvetica, Arial,
+                                  sans-serif;
+                                font-size: 24px;
+                                color: #ffffff;
+                                text-decoration: none;
+                                border-radius: 6px;
+                                font-weight: 600;
+                                letter-spacing: 10;
+                              "
+                            >{{token}}</a>
+                          </td>
+                        </tr>
+                      </table>
                     </td>
                   </tr>
                 </table>
-              </div>
-            </td>
-          </tr>
+              </td>
+            </tr>
+            <!-- end button -->
+
+            <!-- start copy -->
+            <tr>
+              <td
+                align='left'
+                bgcolor='#ffffff'
+                style="
+                  padding: 24px;
+                  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 24px;
+                "
+              >
+                <p>
+                  <span style='color: #1a82e2'>
+                    Lưu ý rằng mã chỉ có hiệu lực trong vòng 5 phút và chỉ có
+                    thể sử dụng một lần. Xin hãy đảm bảo rằng bạn nhập mã chính
+                    xác để tiếp tục quá trình xác thực. Xin cảm ơn!
+                  </span>
+                </p>
+              </td>
+            </tr>
+            <!-- end copy -->
+
+            <!-- start copy -->
+            <tr>
+              <td
+                align='left'
+                bgcolor='#ffffff'
+                style="
+                  padding: 24px;
+                  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 24px;
+                  border-bottom: 3px solid #d4dadf;
+                "
+              >
+                <p style='margin: 0'>Cinema Booking</p>
+              </td>
+            </tr>
+            <!-- end copy -->
+          </table>
+          <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
         </table>
-      </div>
-    </div>
+        <![endif]-->
+        </td>
+      </tr>
+      <!-- end copy block -->
+
+      <!-- start footer -->
+      <tr>
+        <td align='center' bgcolor='#e9ecef' style='padding: 24px'>
+          <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+        <tr>
+        <td align="center" valign="top" width="600">
+        <![endif]-->
+          <table
+            border='0'
+            cellpadding='0'
+            cellspacing='0'
+            width='100%'
+            style='max-width: 600px'
+          >
+            <!-- start permission -->
+            <tr>
+              <td
+                align='center'
+                bgcolor='#e9ecef'
+                style="
+                  padding: 12px 24px;
+                  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+                  font-size: 14px;
+                  line-height: 20px;
+                  color: #666;
+                "
+              >
+                <p style='margin: 0'>
+                  You received this email because we received a request for
+                  [type_of_action] for your account. If you didn't request
+                  [type_of_action] you can safely delete this email.
+                </p>
+              </td>
+            </tr>
+            <!-- end permission -->
+
+            <!-- start unsubscribe -->
+            <tr>
+              <td
+                align='center'
+                bgcolor='#e9ecef'
+                style="
+                  padding: 12px 24px;
+                  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+                  font-size: 14px;
+                  line-height: 20px;
+                  color: #666;
+                "
+              >
+                <p style='margin: 0'>
+                  To stop receiving these emails, you can
+                  <a
+                    href='https://www.blogdesire.com'
+                    target='_blank'
+                  >unsubscribe</a>
+                  at any time.
+                </p>
+                <p style='margin: 0'>
+                  Paste 1234 S. Broadway St. City, State 12345
+                </p>
+              </td>
+            </tr>
+            <!-- end unsubscribe -->
+          </table>
+          <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+        </td>
+      </tr>
+      <!-- end footer -->
+    </table>
+    <!-- end body -->
   </body>
 </html>

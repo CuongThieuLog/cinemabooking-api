@@ -88,7 +88,14 @@ export class AuthService {
 
       if (!user) throw new UnauthorizedException('User not found');
 
-      await this.verifyPassword(user.password, data.password);
+      if (user.role === 'ADMIN') {
+        await this.verifyPassword(user.password, data.password);
+      } else {
+        if (!user.email_verified) {
+          throw new UnauthorizedException('Email not verified');
+        }
+        await this.verifyPassword(user.password, data.password);
+      }
 
       const access_token = await this.jwtService.signAsync({ id: user.id });
       const refresh_token = await this.jwtService.signAsync(
