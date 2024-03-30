@@ -420,8 +420,13 @@ export class AuthService {
     };
   }
 
-  async getMe(token: string): Promise<any> {
+  async getMe(authorizationHeader: string): Promise<any> {
     try {
+      if (!authorizationHeader || !authorizationHeader.startsWith('Bearer ')) {
+        throw new UnauthorizedException('Invalid Authorization header');
+      }
+
+      const token = authorizationHeader.split(' ')[1];
       const decodedToken = this.jwtService.verify(token);
 
       const userId = decodedToken['id'];

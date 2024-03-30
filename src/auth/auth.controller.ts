@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Headers,
+  Post,
+  UnauthorizedException,
+  UseGuards,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import {
   ChangePasswordDto,
@@ -76,12 +84,12 @@ export class AuthController {
   }
 
   @Get('me')
-  async getMe(@Body() { token }: { token: string }) {
+  async getMe(@Headers('authorization') authorizationHeader: string) {
     try {
-      const user = await this.authService.getMe(token);
-      return { user };
+      const user = await this.authService.getMe(authorizationHeader);
+      return user;
     } catch (error) {
-      return { error: error.message };
+      throw new UnauthorizedException(error.message);
     }
   }
 }
