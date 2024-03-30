@@ -32,7 +32,7 @@ export class AuthService {
     private mailService: MailService,
   ) {}
 
-  async signUp(data: SignUpDto) {
+  async register(data: SignUpDto) {
     try {
       const { email } = data;
       const user = await this.prismaService.user.findFirst({
@@ -78,7 +78,7 @@ export class AuthService {
     }
   }
 
-  async signIn(data: SignInDto) {
+  async login(data: SignInDto) {
     try {
       const { email } = data;
 
@@ -418,5 +418,34 @@ export class AuthService {
       refresh_token: refreshToken,
       user,
     };
+  }
+
+  async getMe(token: string): Promise<any> {
+    try {
+      const decodedToken = this.jwtService.verify(token);
+
+      const userId = decodedToken['id'];
+
+      const user = await this.prismaService.user.findUnique({
+        where: { id: userId },
+        select: {
+          id: true,
+          email: true,
+          first_name: true,
+          last_name: true,
+          role: true,
+          created_at: false,
+          updated_at: false,
+        },
+      });
+
+      if (!user) {
+        throw new UnauthorizedException('User not found');
+      }
+
+      return user;
+    } catch (error) {
+      throw new UnauthorizedException('Invalid token');
+    }
   }
 }

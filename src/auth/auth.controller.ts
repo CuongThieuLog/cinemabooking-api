@@ -1,4 +1,4 @@
-import { Body, Controller, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import {
   ChangePasswordDto,
@@ -15,14 +15,14 @@ import { AuthGuard } from 'src/guard/auth.guard';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @Post('/sign-up')
-  async signUp(@Body() data: SignUpDto) {
-    return await this.authService.signUp(data);
+  @Post('/register')
+  async register(@Body() data: SignUpDto) {
+    return await this.authService.register(data);
   }
 
-  @Post('/sign-in')
-  async signIn(@Body() data: SignInDto) {
-    return await this.authService.signIn(data);
+  @Post('/login')
+  async login(@Body() data: SignInDto) {
+    return await this.authService.login(data);
   }
 
   @Post('/forgot-password')
@@ -75,10 +75,13 @@ export class AuthController {
     return await this.authService.changePassword(id, password, new_password);
   }
 
-  // @UseGuards(RefreshTokenGuard)
-  // @Post('/refresh-token')
-  // async refreshToken(@Request() req) {
-  //   console.log(req);
-  //   // return this.authService.refreshToken(req.user)
-  // }
+  @Get('me')
+  async getMe(@Body() { token }: { token: string }) {
+    try {
+      const user = await this.authService.getMe(token);
+      return { user };
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
 }
