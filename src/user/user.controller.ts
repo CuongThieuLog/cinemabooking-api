@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 
@@ -18,12 +19,17 @@ export class UserController {
     return this.usersService.create(createUserDto);
   }
 
-  @Get()
-  findAll() {
-    return this.usersService.findAll();
+  @Get('list')
+  async findAll(
+    @Query('page') page: number = 1,
+    @Query('per_page') perPage: number = 10,
+    @Query('role') role?: string,
+    @Query('search') search?: string,
+  ) {
+    return await this.usersService.findAll(page, perPage, { role, search });
   }
 
-  @Get(':id')
+  @Get('detail/:id')
   findOne(@Param('id') id: string) {
     return this.usersService.findOne(+id);
   }
