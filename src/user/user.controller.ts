@@ -34,12 +34,12 @@ export class UserController {
     return this.usersService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Patch('update/:id')
   update(@Param('id') id: string, @Body() updateUserDto: any) {
     return this.usersService.update(+id, updateUserDto);
   }
 
-  @Delete(':id')
+  @Delete('delete/:id')
   remove(@Param('id') id: string) {
     return this.usersService.remove(+id);
   }
